@@ -1,0 +1,116 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+/* NAV */
+#object-nav {
+    position: fixed;
+    top: 27%;
+    width: 10rem;
+}
+
+#object-nav a {
+    margin: 0.25rem 0;
+    font-weight: bold;
+    font-size: large;
+}
+
+#object-nav a:hover {
+    filter: brightness(1.25)
+}
+
+.nav-pills .nav-link,
+.nav-pills .show>.nav-link {
+    color: white;
+    background-color: #882ea8;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: black;
+    background-color: #ebb30c;
+}
+
+main {
+    margin: 5rem 15rem;
+    padding: 1rem;
+}
+
+/* LINES */
+.line {
+    width: 2px;
+    background-color: white;
+    margin: 2rem auto;
+}
+
+#line1 {
+    height: 1000vh;
+}
+
+/* STARS */
+#starfield {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: black;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* PLANETS */
+img {
+    width: 70%;
+    transition: transform 0.2s ease-in-out;
+    margin: 1rem;
+}
+
+img:hover {
+    transform: scale(1.03);
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60rem;
+    margin: auto;
+}
+
+h4 {
+    margin: 1rem 10rem;
+}
+
+/* TABLES */
+table {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: rgba(137, 89, 176, 0.287);
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+
+th {
+    border: 1.5px solid black;
+    padding: 8px;
+    text-align: center;
+    background-color: #6c4b7d;
+    font-weight: bold;
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+.data-key {
+    white-space: nowrap;
+    /* Prevents long labels from wrapping unnecessarily */
+}

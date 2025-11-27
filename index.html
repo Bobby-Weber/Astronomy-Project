@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Solar System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+
+<body>
+    <div id="starfield"></div>
+
+
+    <div>
+        <nav id="object-nav" class="nav nav-pills flex-column">
+            <a class="nav-link" href="#item-1">Alpha</a>
+            <a class="nav-link" href="#item-2">Beta</a>
+            <a class="nav-link" href="#item-3">Gamma</a>
+            <a class="nav-link" href="#item-4">Delta</a>
+            <a class="nav-link" href="#item-5">Epsilon</a>
+            <a class="nav-link" href="#item-6">Zeta</a>
+            <a class="nav-link" href="#item-7">Eta</a>
+            <a class="nav-link" href="#item-8">Theta</a>
+        </nav>
+
+        <main>
+            <div data-bs-spy="scroll" data-bs-target="#object-nav" data-bs-smooth-scroll="true"
+                class="scrollspy-example-2" tabindex="0">
+                <div id="item-1" class="item">
+                    <h4>Item 1</h4>
+                    <img src="Sun.png">
+                </div>
+
+                <!--LINE-->
+                <div class="line" id="line1"></div>
+
+                <div id="item-2" class="item">
+                    <h4>Item 2</h4>
+                    <img src="Planet1.png">
+                    <table class="tables" hidden>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Orbital Parameters</th>
+                                <th colspan="2">Planet Properties</th>
+                                <th colspan="2">Planet Temperatures</th>
+                                <th colspan="2">Gas Properties</th>
+                                <th colspan="2">Overall Planet Environment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="data-key">a (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">R(in R_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">A (albedo)</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere Stable</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">P(yr)</td>
+                                <td>0</td>
+                                <td class="data-key">density (g/cm^3)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at "a"</td>
+                                <td>0</td>
+                                <td class="data-key">Major gases in atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Life? (Y/N)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">e (eccentricity)</td>
+                                <td>0</td>
+                                <td class="data-key">M(in M_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key">Name of lightest major gas</td>
+                                <td>0</td>
+                                <td class="data-key">Planet Classification</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">perihelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">g(relative to earth value of g)</td>
+                                <td>0</td>
+                                <td class="data-key">T (at K) at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key">atomic weight of lightest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">aphelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">V_esc: escape velocity (km/sec)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Bulk internal composition</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Name of heaviest major gas</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">atomic weight of heaviest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of heaviest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--LINE-->
+                <div class="line" id="line1"></div>
+
+                <div id="item-3" class="item">
+                    <h4>Item 3</h4>
+                    <img src="Planet2.png">
+                    <table class="tables" hidden>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Orbital Parameters</th>
+                                <th colspan="2">Planet Properties</th>
+                                <th colspan="2">Planet Temperatures</th>
+                                <th colspan="2">Gas Properties</th>
+                                <th colspan="2">Overall Planet Environment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="data-key">a (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">R(in R_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">A (albedo)</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere Stable</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">P(yr)</td>
+                                <td>0</td>
+                                <td class="data-key">density (g/cm^3)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at "a"</td>
+                                <td>0</td>
+                                <td class="data-key">Major gases in atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Life? (Y/N)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">e (eccentricity)</td>
+                                <td>0</td>
+                                <td class="data-key">M(in M_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key">Name of lightest major gas</td>
+                                <td>0</td>
+                                <td class="data-key">Planet Classification</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">perihelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">g(relative to earth value of g)</td>
+                                <td>0</td>
+                                <td class="data-key">T (at K) at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key">atomic weight of lightest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">aphelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">V_esc: escape velocity (km/sec)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Bulk internal composition</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Name of heaviest major gas</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">atomic weight of heaviest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of heaviest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--LINE-->
+                <div class="line" id="line1"></div>
+
+                <div id="item-4" class="item">
+                    <h4>Item 4</h4>
+                    <img src="Comet.png">
+                    <table class="tables" hidden>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Orbital Parameters</th>
+                                <th colspan="2">Planet Properties</th>
+                                <th colspan="2">Planet Temperatures</th>
+                                <th colspan="2">Gas Properties</th>
+                                <th colspan="2">Overall Planet Environment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="data-key">a (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">R(in R_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">A (albedo)</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere Stable</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">P(yr)</td>
+                                <td>0</td>
+                                <td class="data-key">density (g/cm^3)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at "a"</td>
+                                <td>0</td>
+                                <td class="data-key">Major gases in atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Life? (Y/N)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">e (eccentricity)</td>
+                                <td>0</td>
+                                <td class="data-key">M(in M_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key">Name of lightest major gas</td>
+                                <td>0</td>
+                                <td class="data-key">Planet Classification</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">perihelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">g(relative to earth value of g)</td>
+                                <td>0</td>
+                                <td class="data-key">T (at K) at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key">atomic weight of lightest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">aphelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">V_esc: escape velocity (km/sec)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Bulk internal composition</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Name of heaviest major gas</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">atomic weight of heaviest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of heaviest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--LINE-->
+                <div class="line" id="line1"></div>
+
+                <div id="item-5" class="item">
+                    <h4>Item 5</h4>
+                    <img src="PlanetPlaceholder.png">
+                    <table class="tables" hidden>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Orbital Parameters</th>
+                                <th colspan="2">Planet Properties</th>
+                                <th colspan="2">Planet Temperatures</th>
+                                <th colspan="2">Gas Properties</th>
+                                <th colspan="2">Overall Planet Environment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="data-key">a (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">R(in R_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">A (albedo)</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere Stable</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">P(yr)</td>
+                                <td>0</td>
+                                <td class="data-key">density (g/cm^3)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at "a"</td>
+                                <td>0</td>
+                                <td class="data-key">Major gases in atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Life? (Y/N)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">e (eccentricity)</td>
+                                <td>0</td>
+                                <td class="data-key">M(in M_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key">Name of lightest major gas</td>
+                                <td>0</td>
+                                <td class="data-key">Planet Classification</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">perihelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">g(relative to earth value of g)</td>
+                                <td>0</td>
+                                <td class="data-key">T (at K) at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key">atomic weight of lightest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">aphelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">V_esc: escape velocity (km/sec)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Bulk internal composition</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Name of heaviest major gas</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">atomic weight of heaviest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of heaviest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--LINE-->
+                <div class="line" id="line1"></div>
+
+                <div id="item-6" class="item">
+                    <h4>Item 6</h4>
+                    <img src="PlanetPlaceholder.png">
+                    <table class="tables" hidden>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Orbital Parameters</th>
+                                <th colspan="2">Planet Properties</th>
+                                <th colspan="2">Planet Temperatures</th>
+                                <th colspan="2">Gas Properties</th>
+                                <th colspan="2">Overall Planet Environment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="data-key">a (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">R(in R_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">A (albedo)</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere Stable</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">P(yr)</td>
+                                <td>0</td>
+                                <td class="data-key">density (g/cm^3)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at "a"</td>
+                                <td>0</td>
+                                <td class="data-key">Major gases in atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Life? (Y/N)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">e (eccentricity)</td>
+                                <td>0</td>
+                                <td class="data-key">M(in M_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key">Name of lightest major gas</td>
+                                <td>0</td>
+                                <td class="data-key">Planet Classification</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">perihelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">g(relative to earth value of g)</td>
+                                <td>0</td>
+                                <td class="data-key">T (at K) at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key">atomic weight of lightest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">aphelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">V_esc: escape velocity (km/sec)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Bulk internal composition</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Name of heaviest major gas</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">atomic weight of heaviest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of heaviest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--LINE-->
+                <div class="line" id="line1"></div>
+
+                <div id="item-7" class="item">
+                    <h4>Item 7</h4>
+                    <img src="PlanetPlaceholder.png">
+                    <table class="tables" hidden>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Orbital Parameters</th>
+                                <th colspan="2">Planet Properties</th>
+                                <th colspan="2">Planet Temperatures</th>
+                                <th colspan="2">Gas Properties</th>
+                                <th colspan="2">Overall Planet Environment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="data-key">a (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">R(in R_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">A (albedo)</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere Stable</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">P(yr)</td>
+                                <td>0</td>
+                                <td class="data-key">density (g/cm^3)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at "a"</td>
+                                <td>0</td>
+                                <td class="data-key">Major gases in atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Life? (Y/N)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">e (eccentricity)</td>
+                                <td>0</td>
+                                <td class="data-key">M(in M_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key">Name of lightest major gas</td>
+                                <td>0</td>
+                                <td class="data-key">Planet Classification</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">perihelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">g(relative to earth value of g)</td>
+                                <td>0</td>
+                                <td class="data-key">T (at K) at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key">atomic weight of lightest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">aphelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">V_esc: escape velocity (km/sec)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Bulk internal composition</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Name of heaviest major gas</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">atomic weight of heaviest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of heaviest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--LINE-->
+                <div class="line" id="line1"></div>
+
+                <div id="item-8" class="item">
+                    <h4>Item 8</h4>
+                    <img src="PlanetPlaceholder.png">
+                    <table class="tables" hidden>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Orbital Parameters</th>
+                                <th colspan="2">Planet Properties</th>
+                                <th colspan="2">Planet Temperatures</th>
+                                <th colspan="2">Gas Properties</th>
+                                <th colspan="2">Overall Planet Environment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="data-key">a (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">R(in R_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">A (albedo)</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Atmosphere Stable</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">P(yr)</td>
+                                <td>0</td>
+                                <td class="data-key">density (g/cm^3)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at "a"</td>
+                                <td>0</td>
+                                <td class="data-key">Major gases in atmosphere</td>
+                                <td>0</td>
+                                <td class="data-key">Life? (Y/N)</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">e (eccentricity)</td>
+                                <td>0</td>
+                                <td class="data-key">M(in M_earth)</td>
+                                <td>0</td>
+                                <td class="data-key">T (in K) at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key">Name of lightest major gas</td>
+                                <td>0</td>
+                                <td class="data-key">Planet Classification</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">perihelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">g(relative to earth value of g)</td>
+                                <td>0</td>
+                                <td class="data-key">T (at K) at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key">atomic weight of lightest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key">aphelion (AU)</td>
+                                <td>0</td>
+                                <td class="data-key">V_esc: escape velocity (km/sec)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Bulk internal composition</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">Name of heaviest major gas</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">atomic weight of heaviest major gas (in u)</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of heaviest major gas at "a" ()</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at perihelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key"></td>
+                                <td></td>
+                                <td class="data-key">v_(rms) of lightest major gas at aphelion</td>
+                                <td>0</td>
+                                <td class="data-key"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
