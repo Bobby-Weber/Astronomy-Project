@@ -33,7 +33,7 @@ body {
 }
 
 main {
-    margin: 5rem 15rem;
+    margin: auto;
     padding: 1rem;
 }
 
@@ -45,7 +45,7 @@ main {
 }
 
 #line1 {
-    height: 1000vh;
+    height: 580rem;
 }
 
 /* STARS */
@@ -80,7 +80,8 @@ img:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 60rem;
+    max-width: 60rem;
+    min-width: 30rem;
     margin: auto;
 }
 
@@ -113,4 +114,43 @@ td {
 .data-key {
     white-space: nowrap;
     /* Prevents long labels from wrapping unnecessarily */
+}
+
+
+/* RULER */
+#ruler {
+  position: absolute;
+  right: 1px;
+  top: 25rem;
+  width: 1rem;
+  border-left: 2px solid white;
+}
+
+.tick {
+  position: absolute;
+  left: 0;
+  width: 45px;
+  border-bottom: 1px solid white;
+  font-size: 12px;
+  color: white;
+  transform: translateX(-110%);
+}
+
+
+
+
+@media (max-width: 1000px) {
+    main {
+        margin-left: 10rem;
+    }
+    #ruler {
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 672px) {
+    main {
+        background-color: rgb(255, 0, 0);
+    }
+
 }

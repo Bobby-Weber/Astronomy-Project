@@ -30,4 +30,28 @@ document.addEventListener("DOMContentLoaded", () => {
             images[i].closest('div').querySelector('.tables').toggleAttribute("hidden");
         });
     }
+
+
+    // Ruler
+    window.addEventListener("load", () => {
+        const ruler = document.getElementById("ruler");
+        ruler.style.height = document.body.scrollHeight + "px";
+
+        const auPx = window.innerHeight * 10;
+        const tickInterval = 0.01;
+        const tickPx = auPx * tickInterval;
+
+        const numTicks = Math.floor(document.body.scrollHeight / tickPx);
+
+        for (let i = 0; i <= numTicks; i++) {
+            const tick = document.createElement("div");
+            tick.classList.add("tick");
+
+            tick.style.top = (i * tickPx) + "px";
+            tick.textContent = (i * tickInterval).toFixed(2) + " AU";
+
+            ruler.appendChild(tick);
+        }
+    })
+
 });
