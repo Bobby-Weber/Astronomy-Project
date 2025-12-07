@@ -37,7 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const ruler = document.getElementById("ruler");
         ruler.style.height = document.body.scrollHeight + "px";
 
-        const auPx = window.innerHeight * 10;
+        const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const auPx = remPx * 580;
+
+        //const auPx = window.innerHeight * 10;
         const tickInterval = 0.01;
         const tickPx = auPx * tickInterval;
 
