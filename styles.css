@@ -45,7 +45,28 @@ main {
 }
 
 #line1 {
-    height: 580rem;
+    height: 735rem;
+}
+#line2 {
+    height: 0;
+}
+#line3 {
+    height: 835rem;
+}
+#line4 {
+    height: 1275rem;
+}
+#line5 {
+    height: 0;
+}
+#line6 {
+    height: 1910rem;
+}
+#line7 {
+    height: 6385rem;
+}
+#line8 {
+    height: 695rem;
 }
 
 /* STARS */
@@ -66,13 +87,13 @@ main {
 }
 
 /* PLANETS */
-img {
+.planetimg {
     width: 70%;
     transition: transform 0.2s ease-in-out;
     margin: 1rem;
 }
 
-img:hover {
+.planetimg:hover {
     transform: scale(1.03);
 }
 
@@ -90,32 +111,9 @@ h4 {
 }
 
 /* TABLES */
-table {
-    width: 100%;
-    font-family: Arial, sans-serif;
-    background-color: rgba(137, 89, 176, 0.287);
-    border-radius: 20px;
-    margin-top: 1rem;
+.tables {
+    width: 75rem;
 }
-
-th {
-    border: 1.5px solid black;
-    padding: 8px;
-    text-align: center;
-    background-color: #6c4b7d;
-    font-weight: bold;
-}
-
-td {
-    padding: 8px;
-    text-align: left;
-}
-
-.data-key {
-    white-space: nowrap;
-    /* Prevents long labels from wrapping unnecessarily */
-}
-
 
 /* RULER */
 #ruler {
@@ -129,11 +127,11 @@ td {
 .tick {
   position: absolute;
   left: 0;
-  width: 45px;
+  width: 50px;
   border-bottom: 1px solid white;
   font-size: 12px;
   color: white;
-  transform: translateX(-110%);
+  transform: translateX(-100%);
 }
 
 

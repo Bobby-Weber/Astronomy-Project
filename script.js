@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const starfield = document.getElementById("starfield");
     const stars = [];
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 600; i++) {
         const star = document.createElement("div");
 
         star.classList.add("star");
@@ -24,14 +24,32 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Click planet
-    const images = document.getElementsByTagName("img");
+    const images = document.getElementsByClassName("planetimg");
     for (let i = 0; i < images.length; i++) {
-        images[i].addEventListener("click", () => {
-            images[i].closest('div').querySelector('.tables').toggleAttribute("hidden");
+        images[i].addEventListener("mouseover", () => {
+            images[i].closest('div').querySelector('.tables').removeAttribute("hidden");
+        });
+        images[i].addEventListener("mouseout", () => {
+            images[i].closest('div').querySelector('.tables').setAttribute("hidden", "");
         });
     }
 
+    // Auto-hide planet tables when they scroll out of view
+    const tables = document.querySelectorAll(".tables");
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                entry.target.setAttribute("hidden", "");
+            }
+        });
+    }, {
+        threshold: 0
+    });
+
+    tables.forEach(table => observer.observe(table));
+
+    
     // Ruler
     window.addEventListener("load", () => {
         const ruler = document.getElementById("ruler");
